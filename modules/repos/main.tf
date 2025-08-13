@@ -24,7 +24,7 @@ module "repos" {
 
 module "deploy-keys" {
   source     = "./deploy-keys"
-  for_each   = var.deploy_key ? toset(flatten([for k, v in module.dev-repos : keys(v.clone_urls) if k == "dev"])) : []
+  for_each   = var.deploy_key ? toset(flatten([for k, v in module.repos : keys(v.clone_urls) if k == "dev"])) : []
   repo_name  = each.key
-  depends_on = [module.dev-repos]
+  depends_on = [module.repos]
 }

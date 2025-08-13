@@ -1,9 +1,9 @@
-terraform {
-  cloud {
-    organization = "tf-2025-examprep"
+# terraform {
+#   cloud {
+#     organization = "tf-2025-examprep"
 
-    workspaces {
-      name = "dev-github-project"
-    }
-  }
-}
+#     workspaces {
+#       name = "dev-github-project"
+#     }
+#   }
+# }
