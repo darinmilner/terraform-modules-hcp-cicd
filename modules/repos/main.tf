@@ -1,8 +1,3 @@
-resource "local_file" "repos" {
-  content  = csvdecode(file("repos.csv"))
-  filename = "${path.module}/repos.json"
-}
-
 module "repos" {
   source   = "./dev-repos"
   for_each = var.environments
