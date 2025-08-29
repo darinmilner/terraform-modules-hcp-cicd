@@ -26,7 +26,7 @@ resource "github_repository_file" "index" {
     avatar = var.avatar,
     name   = var.username,
     date   = time_static.now.year,
-    repos  = var.repos
+    repos  = local.repos
   })
   overwrite_on_create = true # overwrites any existing Readme.md
 

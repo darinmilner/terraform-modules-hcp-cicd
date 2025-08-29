@@ -19,11 +19,6 @@ variable "avatar" {
   description = "Avatar for github User"
 }
 
-variable "repos" {
-  type        = map(any)
-  description = "Repo links map"
-}
-
 variable "run_provisioners" {
   type        = bool
   description = "Should Provisioners run"
