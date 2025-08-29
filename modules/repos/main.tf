@@ -23,3 +23,10 @@ module "deploy-keys" {
   repo_name  = each.key
   depends_on = [module.repos]
 }
+
+module "inf0-page" {
+  source = "../info-pages"
+  repo_name = local.repo_names["backend"]
+  avatar = local.avatar
+  username = local.username
+}
