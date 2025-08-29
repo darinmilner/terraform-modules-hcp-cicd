@@ -1,7 +1,7 @@
 resource "time_static" "now" {}
 
 resource "github_repository" "pages_repo" {
-  name        = var.repo_name
+  name        = "my-repo-info-page"
   description = "Github pages display repo"
   visibility  = var.visibility
   auto_init   = true
@@ -23,8 +23,8 @@ resource "github_repository_file" "index" {
   branch     = "main"
   file       = "index.md"
   content = templatefile("${path.module}/templates/index.tf.tpl", {
-    avatar = var.avatar,
-    name   = var.username,
+    avatar = local.avatar,
+    name   = local.username,
     date   = time_static.now.year,
     repos  = local.repos
   })

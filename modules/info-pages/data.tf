@@ -8,3 +8,7 @@ data "terraform_remote_state" "repos" {
     }
   }
 }
+
+data "github_user" "current_user" {
+  username = ""
+}
